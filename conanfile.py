@@ -11,7 +11,7 @@ class ConanicalConan(ConanFile):
     topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    default_options = {"shared": False, "fPIC": True, "opencv:with_v4l": True}
     generators = "cmake", "cmake_find_package"
     requires = "opencv/4.5.2"
     exports_sources = "src/*"
