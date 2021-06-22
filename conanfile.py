@@ -1,13 +1,13 @@
 from conans import ConanFile, CMake
 
 
-class CeallipConan(ConanFile):
-    name = "ceallip"
+class ConanicalConan(ConanFile):
+    name = "conanical"
     version = "0.1.0"
     license = "<Put the package license here>"
     author = "<Put your name here> <And your email here>"
     url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Ceallip here>"
+    description = "<Description of Conanical here>"
     topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
@@ -39,4 +39,4 @@ class CeallipConan(ConanFile):
         self.copy("*.a", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["ceallip"]
+        self.cpp_info.libs = ["conanical"]
