@@ -12,3 +12,9 @@ target_link_libraries(conanical_01 opencv::opencv_core opencv::opencv_imgcodecs 
 
 add_executable(conanical_02 conanical_02.cpp)
 target_link_libraries(conanical_02 opencv::opencv_objdetect opencv::opencv_imgproc opencv::opencv_videoio opencv::opencv_highgui)
+configure_file(${CONAN_OPENCV_ROOT}/res/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+               ${CMAKE_BINARY_DIR}/bin/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+               COPYONLY)
+configure_file(${CONAN_OPENCV_ROOT}/res/haarcascades/haarcascade_frontalface_alt.xml
+               ${CMAKE_BINARY_DIR}/bin/data/haarcascades/haarcascade_frontalface_alt.xml
+               COPYONLY)
