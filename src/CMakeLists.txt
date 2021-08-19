@@ -18,3 +18,7 @@ configure_file(${CONAN_OPENCV_ROOT}/res/haarcascades/haarcascade_eye_tree_eyegla
 configure_file(${CONAN_OPENCV_ROOT}/res/haarcascades/haarcascade_frontalface_alt.xml
                ${CMAKE_BINARY_DIR}/bin/data/haarcascades/haarcascade_frontalface_alt.xml
                COPYONLY)
+
+find_package(Boost REQUIRED)
+add_executable(conanical_03 conanical_03.cpp)
+target_link_libraries(conanical_03 Boost::program_options)
