@@ -22,3 +22,8 @@ configure_file(${CONAN_OPENCV_ROOT}/res/haarcascades/haarcascade_frontalface_alt
 find_package(Boost REQUIRED)
 add_executable(conanical_03 conanical_03.cpp)
 target_link_libraries(conanical_03 Boost::program_options)
+
+find_package(PythonLibs 3 REQUIRED)
+python_add_module(conanical_04 conanical_04.cpp)
+target_link_libraries(conanical_04 Boost::python38 ${PYTHON_LIBRARIES})
+target_include_directories(conanical_04 PUBLIC ${PYTHON_INCLUDE_DIRS})

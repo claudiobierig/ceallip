@@ -11,16 +11,18 @@ The code snippets used are from tutorials and I'll probably merge them together.
 A list of used libraries:
 
 - OpenCV 4.5.2
+- Boost 1.76.0
 
 ## Build
 
 Tested with Ubuntu 20.04
 
 ~~~sh
-sudo apt-get install libgtk2.0-dev
+sudo apt-get install libgtk2.0-dev #Needed for OpenCV build
+sudo apt-get install python3-numpy #Needed for Boost build
 sudo pip3 install conan
 mkdir build
 cd build
-conan install ..
+conan install .. --build=missing
 conan build ..
 ~~~
