@@ -12,7 +12,8 @@ A list of used libraries:
 
 - OpenCV 4.5.2 (BSD-3)
 - Boost 1.76.0 (BSL-1.0)
-- GTest 1.11.0 (BSD3)
+- GTest 1.11.0 (BSD-3)
+- CMake 3.21.1 (BSD-3)
 
 ## Build
 

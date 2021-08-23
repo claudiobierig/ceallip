@@ -34,3 +34,5 @@ include(GoogleTest)
 add_executable(conanical_05 conanical_05.cpp)
 target_link_libraries(conanical_05 GTest::GTest)
 gtest_discover_tests(conanical_05)
+
+message(STATUS "Conanical 06. Use cmake from conan. CMake Version: ${CMAKE_VERSION}")
