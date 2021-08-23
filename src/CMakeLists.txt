@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.9)
 project(conanical CXX)
 
 if(EXISTS "${CMAKE_BINARY_DIR}/conanbuildinfo.cmake")
@@ -27,3 +27,10 @@ find_package(PythonLibs 3 REQUIRED)
 python_add_module(conanical_04 conanical_04.cpp)
 target_link_libraries(conanical_04 Boost::python38 ${PYTHON_LIBRARIES})
 target_include_directories(conanical_04 PUBLIC ${PYTHON_INCLUDE_DIRS})
+
+enable_testing()
+find_package(GTest)
+include(GoogleTest)
+add_executable(conanical_05 conanical_05.cpp)
+target_link_libraries(conanical_05 GTest::GTest)
+gtest_discover_tests(conanical_05)

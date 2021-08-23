@@ -10,8 +10,9 @@ The code snippets used are from tutorials and I'll probably merge them together.
 
 A list of used libraries:
 
-- OpenCV 4.5.2
-- Boost 1.76.0
+- OpenCV 4.5.2 (BSD-3)
+- Boost 1.76.0 (BSL-1.0)
+- GTest 1.11.0 (BSD3)
 
 ## Build
 

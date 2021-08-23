@@ -1,4 +1,4 @@
-from conans import ConanFile, CMake
+from conans import ConanFile, CMake, tools
 
 
 class ConanicalConan(ConanFile):
@@ -18,6 +18,7 @@ class ConanicalConan(ConanFile):
         "boost:without_python": False
     }
     generators = "cmake", "cmake_find_package"
+    build_requires = "gtest/1.11.0"
     requires = "opencv/4.5.2", "boost/1.76.0"
     exports_sources = "src/*"
 
@@ -29,11 +30,8 @@ class ConanicalConan(ConanFile):
         cmake = CMake(self)
         cmake.configure(source_folder="src")
         cmake.build()
-
-        # Explicit way:
-        # self.run('cmake %s/hello %s'
-        #          % (self.source_folder, cmake.command_line))
-        # self.run("cmake --build . %s" % cmake.build_config)
+        if not tools.cross_building(self):
+            cmake.test()
 
     def package(self):
         self.copy("*.h", dst="include", src="src")
