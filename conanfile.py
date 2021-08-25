@@ -19,7 +19,7 @@ class ConanicalConan(ConanFile):
     }
     generators = "cmake", "cmake_find_package"
     build_requires = "gtest/1.11.0", "cmake/3.21.1"
-    requires = "opencv/4.5.2", "boost/1.76.0"
+    requires = "opencv/4.5.2", "boost/1.76.0", "nlohmann_json/3.10.0"
     exports_sources = "src/*"
 
     def config_options(self):

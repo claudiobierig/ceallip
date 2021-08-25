@@ -29,10 +29,14 @@ target_link_libraries(conanical_04 Boost::python38 ${PYTHON_LIBRARIES})
 target_include_directories(conanical_04 PUBLIC ${PYTHON_INCLUDE_DIRS})
 
 enable_testing()
-find_package(GTest)
+find_package(GTest REQUIRED)
 include(GoogleTest)
 add_executable(conanical_05 conanical_05.cpp)
 target_link_libraries(conanical_05 GTest::GTest)
 gtest_discover_tests(conanical_05)
 
 message(STATUS "Conanical 06. Use cmake from conan. CMake Version: ${CMAKE_VERSION}")
+
+find_package(nlohmann_json REQUIRED)
+add_executable(conanical_07 conanical_07.cpp)
+target_link_libraries(conanical_07 nlohmann_json::nlohmann_json)
